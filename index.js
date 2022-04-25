@@ -57,3 +57,17 @@ class Handlers {
     }
   }
 }
+
+// Add event listners
+addBookBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  Handlers.addBook();
+});
+
+window.addEventListener('DOMContentLoaded', Handlers.retrieveLSBook);
+bookList.addEventListener('click', (ev) => {
+  if (ev.target.classList.contains('rmv-btn')) {
+    ev.target.parentElement.remove();
+    Handlers.lsBookErase(ev.target.getAttribute('data-id'));
+  }
+});
