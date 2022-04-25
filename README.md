@@ -1,56 +1,51 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
-
-> Description the project.
-
+# AwesomeBooks
+Awesome Books is project written in plain Vanilla  JavaScript that has the functionality of adding a book to the store, displaying  it and as well as removing from the bookstore. Its uses local storage for data presevation.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- Javascript
+- Font Awesome CSS library
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo](https://https://github.com/mwenyoa/AwesomeBooks/)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
 ### Setup
-
+- Run git clone(https://github.com/mwenyoa/AwesomeBooks.git) 
 ### Install
-
-### Usage
+- Run [npm install] to install all project dependencies
 
 ### Run tests
+- Run [npx hint .] to test the markup or HTML
+- Run [npx stylelint "**/**.{css,scss}] to test the stylesheet
+- Run [npx eslint .] to test and check Javascript files.
 
-### Deployment
+### Prerequisites
+- Have some knowledge about HTML, CSS, and Javascript.
+- Javascript Dom Manipulation.
+- Arrays inJavascripts.
+- Understanding of github and github workflow.
+- Be familiar with version control system like git.
+- Understanding of Linters basics.
+- Familiarity with flexbox.
+- Classes and Ojects in javascript
+- Javascript Modules
+- ES6 Syntax
 
+## Author
 
+👤 **Anthony Mwenyo**
 
-## Authors
+- GitHub: [@mwenyoa](https://github.com/mwenyoa)
+- Twitter: [@anthony_mwenyo](https://twitter.com/anthony_mwenyo)
+- LinkedIn: [@anthony-mwenyo](https://www.linkedin.com/in/anthony-mwenyo-710318131/)
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -63,10 +58,6 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
