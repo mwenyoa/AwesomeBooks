@@ -10,7 +10,7 @@ const timeShow = document.querySelector('.show-time');
 const dateTime = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
 timeShow.textContent = dateTime;
 class Handlers {
-  static addBook(e) {
+  static addBook() {
     let bookStore;
     if (localStorage.getItem('books') === null) {
       bookStore = [];
@@ -29,17 +29,6 @@ class Handlers {
     localStorage.setItem('books', JSON.stringify(bookStore));
     bookAuthor.value = '';
     bookTitle.value = '';
-
-    const alertSection = document.querySelector('.alert-msg');
-    const message = document.createElement('p');
-    if (bookAuthor.value === '' && bookTitle.value === '') {
-      e.preventDefault();
-      message.innerText = 'Please Add your book details.';
-      alertSection.append(message);
-      setTimeout(() => {
-        message.style.display = 'none';
-      }, 3000);
-    }
   }
 
   static retrieveLSBook() {
