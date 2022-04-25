@@ -71,3 +71,28 @@ bookList.addEventListener('click', (ev) => {
     Handlers.lsBookErase(ev.target.getAttribute('data-id'));
   }
 });
+
+// select nav items
+const listBooks = document.querySelector('.list-books');
+const showAddBooks = document.querySelector('.add-books');
+const showContact = document.querySelector('.contact-sec');
+const addBookSec = document.querySelector('.addBook');
+const contactInfo = document.querySelector('.contact-sect');
+
+listBooks.addEventListener('click', () => {
+  bookList.style.display = 'flex';
+  addBookSec.style.display = 'none';
+  contactInfo.style.display = 'none';
+});
+
+showAddBooks.addEventListener('click', () => {
+  addBookSec.style.display = 'flex';
+  contactInfo.style.display = 'none';
+  bookList.style.display = 'none';
+});
+
+showContact.addEventListener('click', () => {
+  contactInfo.style.display = 'flex';
+  bookList.style.display = 'none';
+  addBookSec.style.display = 'none';
+});
