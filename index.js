@@ -1,13 +1,16 @@
 /* eslint-disable eqeqeq */
 import Books from './modules/books.js';
+import luxon from './modules/luxon.js';
 
 const bookList = document.querySelector('.bookList');
 const bookTitle = document.querySelector('.book-title');
 const bookAuthor = document.querySelector('.book-author');
 const addBookBtn = document.querySelector('.btn-add');
-
+const timeShow = document.querySelector('.show-time');
+const dateTime = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
+timeShow.textContent = dateTime;
 class Handlers {
-  static addBook() {
+  static addBook(e) {
     let bookStore;
     if (localStorage.getItem('books') === null) {
       bookStore = [];
@@ -26,6 +29,17 @@ class Handlers {
     localStorage.setItem('books', JSON.stringify(bookStore));
     bookAuthor.value = '';
     bookTitle.value = '';
+
+    const alertSection = document.querySelector('.alert-msg');
+    const message = document.createElement('p');
+    if (bookAuthor.value === '' && bookTitle.value === '') {
+      e.preventDefault();
+      message.innerText = 'Please Add your book details.';
+      alertSection.append(message);
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 3000);
+    }
   }
 
   static retrieveLSBook() {
@@ -36,7 +50,7 @@ class Handlers {
               <div class="display-books">
               <p>${book.bookTitle} </p>
               <p>${book.bookAuthor}</p>
-              <button class="rmv-btn" data-id=${book.id} type="button">Remove</button><br/>
+              <button class="rmv-btn" data-id=${book.id} type="button">Remove</button>
               </div>
               `;
       });
@@ -95,4 +109,10 @@ showContact.addEventListener('click', () => {
   contactInfo.style.display = 'flex';
   bookList.style.display = 'none';
   addBookSec.style.display = 'none';
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  bookList.style.display = 'flex';
+  addBookSec.style.display = 'none';
+  contactInfo.style.display = 'none';
 });
