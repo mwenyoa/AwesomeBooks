@@ -9,6 +9,8 @@ Awesome Books is project written in plain Vanilla  JavaScript that has the funct
 - Font Awesome CSS library
 - Luxon Library
 
+## Live Demo
+> See live demo  here: https://mwenyoa.github.io/AwesomeBooks/
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
