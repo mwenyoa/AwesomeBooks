@@ -1,5 +1,5 @@
 # AwesomeBooks
-Awesome Books is project written in plain Vanilla  JavaScript that has the functionality of adding a book to the store, displaying  it and as well as removing from the bookstore. Its uses local storage for data presevation.
+Awesome Books is project written in plain Vanilla  JavaScript that has the functionality of adding a book to the store, displaying  it and as well as removing from the bookstore. Its uses local storage for data presevation. This project also Includes ES6 modules and Arrow functions implementation.
 
 ## Built With
 
@@ -7,11 +7,7 @@ Awesome Books is project written in plain Vanilla  JavaScript that has the funct
 - CSS
 - Javascript
 - Font Awesome CSS library
-
-## Live Demo
-
-[Live Demo](https://https://github.com/mwenyoa/AwesomeBooks/)
-
+- Luxon Library
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
