@@ -3,7 +3,6 @@ Awesome Books is project written in plain Vanilla  JavaScript that has the funct
 
 ![awesomebooks-mobile](https://user-images.githubusercontent.com/28694196/170915223-631d40ad-a637-4e61-8b40-b7917552e815.png)
 
-
 ## Built With
 
 - HTML
