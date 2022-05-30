@@ -5,9 +5,8 @@ import luxon from './modules/luxon.js';
 const bookList = document.querySelector('.bookList');
 const bookTitle = document.querySelector('.book-title');
 const bookAuthor = document.querySelector('.book-author');
-const addBookBtn = document.querySelector('.btn-add');
 const timeShow = document.querySelector('.show-time');
-const formAbook = document.querySelector("#book-form");
+const formAbook = document.querySelector('#book-form');
 const dateTime = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
 timeShow.textContent = dateTime;
 class Handlers {
@@ -88,7 +87,7 @@ const navlist = document.querySelector('.nav-list');
 const navItems = document.querySelectorAll('.nav-item');
 // Menu Close Event
 
-  //  List the books in the
+//  List the books in the
 listBooks.addEventListener('click', () => {
   bookList.style.display = 'flex';
   addBookSec.style.display = 'none';
@@ -113,29 +112,24 @@ window.addEventListener('DOMContentLoaded', () => {
   contactInfo.style.display = 'none';
 });
 
-
 const toggleMenu = () => {
-  if(navlist.classList.contains('show-menu')){
+  if (navlist.classList.contains('show-menu')) {
     navlist.classList.remove('show-menu');
     btnMenu.style.display = 'flex';
-    btnClose.style.display  = 'none';
+    btnClose.style.display = 'none';
     navlist.style.display = 'none';
-  }
-  else {
+  } else {
     navlist.classList.add('show-menu');
-   btnMenu.style.display = 'none';
-   btnClose.style.display  = 'flex';
-   navlist.style.display = 'flex';
-   
+    btnMenu.style.display = 'none';
+    btnClose.style.display = 'flex';
+    navlist.style.display = 'flex';
   }
- };
- 
- btnClose.addEventListener('click', toggleMenu);
- btnMenu.addEventListener('click', toggleMenu);
-if(window.innerWidth <= 768){
+};
+
+btnClose.addEventListener('click', toggleMenu);
+btnMenu.addEventListener('click', toggleMenu);
+if (window.innerWidth <= 768) {
   navItems.forEach((navItem) => {
     navItem.addEventListener('click', toggleMenu);
-
   });
-
 }
