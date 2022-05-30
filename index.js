@@ -7,6 +7,7 @@ const bookTitle = document.querySelector('.book-title');
 const bookAuthor = document.querySelector('.book-author');
 const addBookBtn = document.querySelector('.btn-add');
 const timeShow = document.querySelector('.show-time');
+const formAbook = document.querySelector("#book-form");
 const dateTime = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
 timeShow.textContent = dateTime;
 class Handlers {
@@ -39,7 +40,7 @@ class Handlers {
               <div class="display-books">
               <p>${book.bookTitle} </p>
               <p>${book.bookAuthor}</p>
-              <button class="rmv-btn" data-id=${book.id} type="button">Remove</button>
+              <p><button class="rmv-btn" data-id=${book.id} type="button" title="Delete Book"><i class="fa fa-2x fa-trash"></i></button></p>
               </div>
               `;
       });
@@ -62,7 +63,7 @@ class Handlers {
 }
 
 // Add event listners
-addBookBtn.addEventListener('click', (e) => {
+formAbook.addEventListener('submit', (e) => {
   e.preventDefault();
   Handlers.addBook();
 });
@@ -81,27 +82,60 @@ const showAddBooks = document.querySelector('.add-books');
 const showContact = document.querySelector('.contact-sec');
 const addBookSec = document.querySelector('.addBook');
 const contactInfo = document.querySelector('.contact-sect');
+const btnClose = document.querySelector('.menu-close');
+const btnMenu = document.querySelector('.menu-bar');
+const navlist = document.querySelector('.nav-list');
+const navItems = document.querySelectorAll('.nav-item');
+// Menu Close Event
 
+  //  List the books in the
 listBooks.addEventListener('click', () => {
   bookList.style.display = 'flex';
   addBookSec.style.display = 'none';
   contactInfo.style.display = 'none';
 });
-
+// Add books
 showAddBooks.addEventListener('click', () => {
   addBookSec.style.display = 'flex';
   contactInfo.style.display = 'none';
   bookList.style.display = 'none';
 });
-
+// Show cntact info
 showContact.addEventListener('click', () => {
   contactInfo.style.display = 'flex';
   bookList.style.display = 'none';
   addBookSec.style.display = 'none';
 });
-
+// Load list of books on window load
 window.addEventListener('DOMContentLoaded', () => {
   bookList.style.display = 'flex';
   addBookSec.style.display = 'none';
   contactInfo.style.display = 'none';
 });
+
+
+const toggleMenu = () => {
+  if(navlist.classList.contains('show-menu')){
+    navlist.classList.remove('show-menu');
+    btnMenu.style.display = 'flex';
+    btnClose.style.display  = 'none';
+    navlist.style.display = 'none';
+  }
+  else {
+    navlist.classList.add('show-menu');
+   btnMenu.style.display = 'none';
+   btnClose.style.display  = 'flex';
+   navlist.style.display = 'flex';
+   
+  }
+ };
+ 
+ btnClose.addEventListener('click', toggleMenu);
+ btnMenu.addEventListener('click', toggleMenu);
+if(window.innerWidth <= 768){
+  navItems.forEach((navItem) => {
+    navItem.addEventListener('click', toggleMenu);
+
+  });
+
+}
