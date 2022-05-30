@@ -1,5 +1,10 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap";
+@import url('http://fonts.cdnfonts.com/css/cocogoose');
+
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
 }
 
 html,
@@ -7,54 +12,62 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-  background-color: #008080;
+  background-color: #4d5e96;
   color: #fff;
   width: 100%;
   line-height: 30px;
   position: fixed;
   display: flex;
-  flex-direction: row;
+  box-shadow: 0 10px 10px 0 rgb(36, 38, 43);
+  padding: 15px;
+  font-weight: bold;
 }
 
-nav {
+.menu-controls {
+  display: none;
+}
+
+.nav-content {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
-  margin-left: 30px;
+  margin-left: 20px;
   font-size: 35px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  margin-top: 12px;
+  justify-content: flex-start;
+  padding: 15px 10px;
+  font-family: "cocogoose", sans-serif;
 }
 
 .nav-list {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
-  margin-right: 50px;
+  flex-direction: row;
+  line-height: 30px;
 }
 
 .nav-list .nav-item {
   list-style: none;
   padding: 0 20px;
   font-weight: bold;
-  display: block;
+  display: flex;
+  font-family: "cocogoose", sans-serif;
 }
 
 .nav-item:hover {
   cursor: pointer;
   text-decoration: underline;
-  transform: scale(1.1);
 }
 
 .book-form {
@@ -78,6 +91,8 @@ h1,
 h2,
 h4 {
   text-align: center;
+  color: #4d5e96;
+  font-weight: bold;
 }
 
 .bookList {
@@ -90,48 +105,49 @@ h4 {
 
 /* Add book btn */
 button[type="submit"] {
-  color: #008057;
+  color: #4d5e96;
   align-self: flex-end;
   display: block;
-  padding: 5px;
+  padding: 10px;
   width: auto;
   font-weight: bold;
   border-radius: 4px;
 }
 
 button[type="submit"]:hover {
-  background-color: #008080;
+  background-color: #4d5e96;
   color: #fff;
+  padding: 12px;
 }
 
 .rmv-btn {
   display: flex;
-  height: 30px;
   color: #f00;
   align-self: flex-end;
-  position: static;
+  position: relative;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
 .rmv-btn:hover {
-  transform: scale(1.1);
+  background-color: #f00;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* books styles */
 .display-books {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  padding: 5px;
-}
-
-.display-books .rmv-btn {
-  margin-top: 0;
+  justify-content: space-between;
 }
 
 .display-books:nth-child(even) {
   background-color: #c8cbce;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 p {
@@ -152,6 +168,13 @@ p {
 .bookShelf {
   width: 80%;
   margin: 80px auto;
+  height: 100%;
+  padding: 2%;
+  line-height: 1.5;
+}
+
+.bookShelf p {
+  line-height: 1.8;
 }
 
 .addBook {
@@ -169,9 +192,91 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid black;
-  width: 90%;
-  margin: 25px auto;
+  border: 2px solid #fff;
+  width: 100%;
+  margin: 0 auto;
   padding: 5px;
   text-align: center;
+  bottom: 0;
+  position: fixed;
+  font-weight: bold;
+  background-color: #4d5e96;
+  color: #fff;
+}
+
+.conatc-section {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.show-menu {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+
+  .menu-controls .fa-close {
+    display: none;
+  }
+
+  .menu-controls .fa-close:hover {
+    cursor: pointer;
+  }
+
+  .menu-controls .menu-bar:hover {
+    cursor: pointer;
+  }
+
+  .menu-controls {
+    display: flex;
+    padding: 15px 10px;
+  }
+
+  .show-menu {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .bookShelf {
+    width: 100%;
+    margin: 80px auto;
+    height: 100%;
+    padding: 5%;
+    line-height: 1.5;
+  }
+
+  .book-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin-top: 20px;
+  }
+
+  .nav-item:hover {
+    cursor: pointer;
+  }
+
+  header {
+    z-index: 99;
+  }
 }
