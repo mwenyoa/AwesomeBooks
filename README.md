@@ -1,6 +1,9 @@
 # AwesomeBooks
 Awesome Books is project written in plain Vanilla  JavaScript that has the functionality of adding a book to the store, displaying  it and as well as removing from the bookstore. Its uses local storage for data presevation. This project also Includes ES6 modules and Arrow functions implementation.
 
+![awesomebooks-mobile](https://user-images.githubusercontent.com/28694196/170915223-631d40ad-a637-4e61-8b40-b7917552e815.png)
+
+
 ## Built With
 
 - HTML
