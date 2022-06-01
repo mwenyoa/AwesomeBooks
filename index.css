@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap";
-@import url('http://fonts.cdnfonts.com/css/cocogoose');
+@import "http://fonts.cdnfonts.com/css/cocogoose";
 
 * {
   box-sizing: border-box;
